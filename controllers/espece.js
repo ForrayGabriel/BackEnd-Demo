@@ -1,23 +1,3 @@
-function createEspece(req, res) {
-    let Espece = require('../models/espece');
-    let newEspece = Espece ({
-        nom: req.body.nom,
-        nb_pattes : req.body.nb_pattes
-    });
-  
-    newEspece.save()
-    .then((savedEspece) => {
-
-        //send back the created Todo
-        res.json(savedEspece);
-            
-    }, (err) => {
-        res.status(400).json(err)
-    });
-
-}
-
-
 function readEspeces(req, res) {
 
     let Especes = require("../models/espece");
@@ -44,5 +24,4 @@ function readEspece(req, res) {
 
 module.exports.reads = readEspeces;
 module.exports.read = readEspece;
-module.exports.create = createEspece;
 
